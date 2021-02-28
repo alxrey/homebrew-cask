@@ -1,13 +1,13 @@
 cask "zoom" do
-  version "5.5.12484.0202"
+  version "5.5.12513.0205"
 
   if Hardware::CPU.intel?
-    sha256 "db591e700c158e536380f5a3a26f10b948edd4a369b9abc528e751be7a1406f0"
+    sha256 "66b5b358ab18eee0c281706b454c825d09f8c91e251ea2023903bc5201a02a20"
 
     url "https://d11yldzmag5yn.cloudfront.net/prod/#{version}/Zoom.pkg",
         verified: "d11yldzmag5yn.cloudfront.net/"
   else
-    sha256 "40af76209b932b7c69a48765de4f5022f8a87fce2ad307dfe6158510897c0f58"
+    sha256 "a0b175dafaff471e475ee23d44f235f97fe9a8f3d611ca414e91fb54a28c0df7"
 
     url "https://d11yldzmag5yn.cloudfront.net/prod/#{version}/arm64/Zoom.pkg",
         verified: "d11yldzmag5yn.cloudfront.net/"
