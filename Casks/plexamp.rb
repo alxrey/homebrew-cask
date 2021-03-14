@@ -1,6 +1,6 @@
 cask "plexamp" do
-  version "3.4.2"
-  sha256 "c1be8a9dd75fbed0c7254dffd1fc490c5896ece2674fd9bddeaca09dcd051fa5"
+  version "3.4.4"
+  sha256 "0b9cf32aad697d2c8f91d7ff26192fccb9cf95639a363e6da0f2404b4581d7ad"
 
   url "https://plexamp.plex.tv/plexamp.plex.tv/desktop/Plexamp-#{version}.dmg",
       verified: "plexamp.plex.tv/"

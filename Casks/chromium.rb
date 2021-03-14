@@ -1,6 +1,6 @@
 cask "chromium" do
-  version "856554"
-  sha256 "864c589942826c62a393a09f62b7eac2302793b5d67f6e557987762ff3c2a551"
+  version "860657"
+  sha256 "f78de95d673e4f2dadf3423cb7013eaee5db607bb9fe34c427f80fbf1672371d"
 
   url "https://commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/#{version}/chrome-mac.zip",
       verified: "commondatastorage.googleapis.com/chromium-browser-snapshots/Mac/"
