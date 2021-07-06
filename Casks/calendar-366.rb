@@ -1,6 +1,6 @@
 cask "calendar-366" do
-  version "2.9.5,3373"
-  sha256 "e08d116dda202c065b3389a1e4d68802e4dee2a366a556ca989692a2ce35ef99"
+  version "2.9.9,3381"
+  sha256 "7de5d600e4329d376c8f450170d9a01b966d03146d186037db4835607faf84e5"
 
   url "https://nspektor.com/downloads/Calendar366_v#{version.before_comma}.dmg"
   name "Calendar 366 II"
@@ -11,6 +11,8 @@ cask "calendar-366" do
     url "https://nspektor.com/downloads/Calendar366IIAsset.xml"
     strategy :sparkle
   end
+
+  depends_on macos: ">= :sierra"
 
   app "Calendar 366 II.app"
 
