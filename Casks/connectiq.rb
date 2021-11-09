@@ -1,6 +1,6 @@
 cask "connectiq" do
-  version "4.0.2-2021-05-13-9b3b7f19f"
-  sha256 "a7d9690555d3afaeed5a7a14c275fc858911b7ba8f931f3b1a67274381ce3e5c"
+  version "4.0.6-2021-10-06-af9b9d6e2"
+  sha256 "8c2180be514b9f2236962bf0d5c9900ef6f48ac1218772466476411aa1b9f896"
 
   url "https://developer.garmin.com/downloads/connect-iq/sdks/connectiq-sdk-mac-#{version}.dmg"
   name "Garmin Connect IQ SDK"
@@ -9,7 +9,7 @@ cask "connectiq" do
 
   livecheck do
     url "https://developer.garmin.com/downloads/connect-iq/sdks/sdks.json"
-    regex(/connectiq-sdk-mac[._-]v?(\d+(?:\.\d+)*-\d+(?:-\d+)*-\h+)\.dmg/i)
+    regex(/connectiq-sdk-mac[._-]v?(\d+(?:\.\d+)+-\d+(?:-\d+)+-\h+)\.dmg/i)
   end
 
   app "connectiq-sdk-mac-#{version}/bin/ConnectIQ.app"

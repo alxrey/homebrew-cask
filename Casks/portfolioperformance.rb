@@ -1,8 +1,15 @@
 cask "portfolioperformance" do
-  version "0.53.3"
-  sha256 "19aa449d32ab0db0f50198cd903fb4e655d40abe7caf3bc5832be8ea81fb9aea"
+  arch = Hardware::CPU.intel? ? "x86_64" : "aarch64"
 
-  url "https://github.com/buchen/portfolio/releases/download/#{version}/PortfolioPerformance-#{version}.dmg",
+  version "0.56.0"
+
+  if Hardware::CPU.intel?
+    sha256 "171b72c885c3ccd29992bc79638d2a97c6eb39b6cfdb5511bd50383f26ccaea7"
+  else
+    sha256 "82ffe92a1d92d7596d7bb9f1e12209f0d78d651ce040bd889a1b98dbb02aec2f"
+  end
+
+  url "https://github.com/buchen/portfolio/releases/download/#{version}/PortfolioPerformance-#{version}-#{arch}.dmg",
       verified: "github.com/buchen/portfolio/"
   name "Portfolio Performance"
   desc "Calculate the overall performance of an investment portfolio"

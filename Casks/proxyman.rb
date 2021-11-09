@@ -1,12 +1,16 @@
 cask "proxyman" do
-  version "2.29.0"
-  sha256 "c2b1239eae2f3efbb0b9a7dcd111deb746d8b66d402bdd33bd0cd72183d27c3a"
+  version "2.34.1,23410"
+  sha256 "8d65b3bd2e8f7fad605e549fa372fde9c3a3773f4868b2101fa88b64fd129c69"
 
-  url "https://github.com/ProxymanApp/Proxyman/releases/download/#{version}/Proxyman_#{version}.dmg",
-      verified: "github.com/ProxymanApp/Proxyman/"
+  url "https://download.proxyman.io/#{version.after_comma}/Proxyman_#{version.before_comma}.dmg"
   name "Proxyman"
   desc "Modern and intuitive HTTP Debugging Proxy app"
   homepage "https://proxyman.io/"
+
+  livecheck do
+    url "https://proxyman.io/osx/version.xml"
+    strategy :sparkle
+  end
 
   auto_updates true
 

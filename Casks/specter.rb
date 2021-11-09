@@ -1,6 +1,6 @@
 cask "specter" do
-  version "1.4.3"
-  sha256 "94a2361d32d35a51fa1e743288f4a84ddab01a96813e583e9ea38d8f824e3d47"
+  version "1.7.0"
+  sha256 "4ce586302ab7cb686e1f41845873414c7a49ded8e52421d46e7b7676f4229350"
 
   url "https://github.com/cryptoadvance/specter-desktop/releases/download/v#{version}/SpecterDesktop-v#{version}.dmg",
       verified: "github.com/cryptoadvance/specter-desktop/"
@@ -12,6 +12,8 @@ cask "specter" do
     url :url
     strategy :github_latest
   end
+
+  depends_on macos: ">= :catalina"
 
   app "Specter.app"
 

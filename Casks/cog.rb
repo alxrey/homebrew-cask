@@ -1,6 +1,6 @@
 cask "cog" do
-  version "1552,922e657f"
-  sha256 "01b9545a9074a95b3bf2d1bbd38509970e87084a4acb8b2ebf9909b9408a008f"
+  version "1617,bce21b44"
+  sha256 "cd40b3cce1a003b62609953fcd120bcc98c3cdfba868659a4fc48baad6485bab"
 
   url "https://f.losno.co/cog/Cog-#{version.after_comma}.zip"
   name "Cog"
@@ -22,7 +22,7 @@ cask "cog" do
   uninstall quit: "org.cogx.cog"
 
   zap trash: [
-    "~/Library/Caches/org.cogx.cog",
     "~/Library/Application Support/Cog",
+    "~/Library/Caches/org.cogx.cog",
   ]
 end

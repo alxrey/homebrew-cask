@@ -1,9 +1,9 @@
 cask "microsoft-excel" do
-  version "16.50.21061301"
-  sha256 "95c69d6d7734a04d7fe3e3debc65a59b939b3db1eb7fadcbb5049d18dc8933ac"
+  version "16.54.21101001"
+  sha256 "e09fe9f49a36b37af3745673a385be4de9ae8ec774965fd1753f8479a775fc54"
 
-  url "https://officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Excel_#{version}_Installer.pkg",
-      verified: "officecdn-microsoft-com.akamaized.net/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/"
+  url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Excel_#{version}_Installer.pkg",
+      verified: "officecdnmac.microsoft.com/"
   name "Microsoft Excel"
   desc "Spreadsheet software"
   homepage "https://products.office.com/en-US/excel"
@@ -31,14 +31,15 @@ cask "microsoft-excel" do
     "com.microsoft.package.Microsoft_Excel.app",
     "com.microsoft.pkg.licensing",
   ],
-            launchctl: [
-              "com.microsoft.office.licensingV2.helper",
-            ]
+            launchctl: "com.microsoft.office.licensingV2.helper"
 
   zap trash: [
     "~/Library/Application Scripts/com.microsoft.Excel",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.microsoft.excel.sfl*",
+    "~/Library/Caches/com.microsoft.Excel",
     "~/Library/Containers/com.microsoft.Excel",
     "~/Library/Preferences/com.microsoft.Excel.plist",
+    "~/Library/Saved Application State/com.microsoft.Excel.savedState",
+    "~/Library/Webkit/com.microsoft.Excel",
   ]
 end

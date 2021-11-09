@@ -1,16 +1,23 @@
 cask "postman" do
-  version "8.7.0"
-  sha256 "5ebe8cf4c9a58694afa60fa1a05b0382d40b985ef1395d337a75aeaaf0226d58"
+  arch = Hardware::CPU.intel? ? "osx64" : "osx_arm64"
 
-  url "https://dl.pstmn.io/download/version/#{version}/osx64",
+  version "9.1.3"
+
+  if Hardware::CPU.intel?
+    sha256 "1c543ec9c1b30c12d85d58b93177fd72dfa6482049dab0cefeb0a822aae5d086"
+  else
+    sha256 "4b551a350b5f76a30f5ab00ceab7ba7eef280f3b5a5a466b353cf06a3659ad7e"
+  end
+
+  url "https://dl.pstmn.io/download/version/#{version}/#{arch}",
       verified: "dl.pstmn.io/download/version/"
   name "Postman"
   desc "Collaboration platform for API development"
   homepage "https://www.postman.com/"
 
   livecheck do
-    url "https://dl.pstmn.io/download/latest/osx"
-    strategy :header_match
+    url "https://dl.pstmn.io/api/version/notes"
+    regex(/Postman\s*v?(\d+(?:\.\d+)+)/i)
   end
 
   auto_updates true

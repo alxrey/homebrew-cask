@@ -1,24 +1,13 @@
 cask "docker" do
-  version "3.5.1,66090"
+  arch = Hardware::CPU.intel? ? "amd64" : "arm64"
 
+  version "4.1.1,69879"
+
+  url "https://desktop.docker.com/mac/main/#{arch}/#{version.after_comma}/Docker.dmg"
   if Hardware::CPU.intel?
-    sha256 "807b9014035f2b94f778b1b03090ddf1a52cad17c3195e9d9bb343ba837ac5cf"
-
-    url "https://desktop.docker.com/mac/stable/amd64/#{version.after_comma}/Docker.dmg"
-
-    livecheck do
-      url "https://desktop.docker.com/mac/stable/amd64/appcast.xml"
-      strategy :sparkle
-    end
+    sha256 "de479dab3ec14041980167c99e1fef966556e43a07a6e68afb500e1c5465b7ec"
   else
-    sha256 "f245280b20229d17c36cb1fca5bd061cad32fe962559fee9c4060d01f49790f4"
-
-    url "https://desktop.docker.com/mac/stable/arm64/#{version.after_comma}/Docker.dmg"
-
-    livecheck do
-      url "https://desktop.docker.com/mac/stable/arm64/appcast.xml"
-      strategy :sparkle
-    end
+    sha256 "ffeb9ff909396329abc1afb77af442ff2a449ecad183316df8055ecb3ea3e76f"
   end
 
   name "Docker Desktop"
@@ -27,12 +16,18 @@ cask "docker" do
   desc "App to build and share containerized applications and microservices"
   homepage "https://www.docker.com/products/docker-desktop"
 
+  livecheck do
+    url "https://desktop.docker.com/mac/main/#{arch}/appcast.xml"
+    strategy :sparkle
+  end
+
   auto_updates true
   conflicts_with formula: %w[
     docker
     docker-completion
     docker-compose
     docker-compose-completion
+    docker-credential-helper-ecr
     hyperkit
     kubernetes-cli
   ]
@@ -75,6 +70,7 @@ cask "docker" do
     "/usr/local/bin/docker-compose.backup",
     "/usr/local/bin/docker.backup",
     "~/Library/Application Support/Docker Desktop",
+    "~/Library/Application Support/com.bugsnag.Bugsnag/com.docker.docker",
     "~/Library/Application Scripts/com.docker.helper",
     "~/Library/Caches/KSCrashReports/Docker",
     "~/Library/Caches/com.docker.docker",
@@ -82,6 +78,7 @@ cask "docker" do
     "~/Library/Containers/com.docker.docker",
     "~/Library/Containers/com.docker.helper",
     "~/Library/Group Containers/group.com.docker",
+    "~/Library/HTTPStorages/com.docker.docker.binarycookies",
     "~/Library/Preferences/com.docker.docker.plist",
     "~/Library/Preferences/com.electron.docker-frontend.plist",
     "~/Library/Saved Application State/com.electron.docker-frontend.savedState",

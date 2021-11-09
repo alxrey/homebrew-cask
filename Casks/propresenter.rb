@@ -1,6 +1,6 @@
 cask "propresenter" do
-  version "7.6,117833745"
-  sha256 "ad141957640330ee8d936cfc701bd2f82db263f05f63faf26d7bacb051ca388f"
+  version "7.7.1,117899527"
+  sha256 "cebf9ca9c79d75538ff6e444ab18386f6f1e5b7f2703eda22db3c66702e4a195"
 
   url "https://renewedvision.com/downloads/propresenter/mac/ProPresenter_#{version.before_comma}_#{version.after_comma}.zip"
   name "ProPresenter"
@@ -9,8 +9,11 @@ cask "propresenter" do
 
   livecheck do
     url "https://api.renewedvision.com/v1/pro/upgrade?platform=macos&osVersion=0&appVersion=0&buildNumber=0&includeNotes=0"
-    strategy :page_match do |page|
-      match = page.match(%r{/ProPresenter_(\d+(?:\.\d+)*)_(\d+)\.zip}i)
+    regex(%r{/ProPresenter_(\d+(?:\.\d+)*)_(\d+)\.zip}i)
+    strategy :page_match do |page, regex|
+      match = page.match(regex)
+      next if match.blank?
+
       "#{match[1]},#{match[2]}"
     end
   end

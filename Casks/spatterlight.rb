@@ -1,6 +1,6 @@
 cask "spatterlight" do
-  version "0.8.1"
-  sha256 "6c21af59cc40930487c6d3405de9c460b6394df76b42762d6492b479244ff98c"
+  version "0.8.9"
+  sha256 "dd4878b9207b6e45d80796f130d0862387347c0730ce85ef6e6644b54dff33ca"
 
   url "https://github.com/angstsmurf/spatterlight/releases/download/v#{version}/Spatterlight.zip",
       verified: "github.com/angstsmurf/spatterlight/"
@@ -11,4 +11,14 @@ cask "spatterlight" do
   depends_on macos: ">= :catalina"
 
   app "Spatterlight.app"
+
+  zap trash: [
+    "~/Library/Application Scripts/net.ccxvii.spatterlight.SpatterlightQuickLook",
+    "~/Library/Application Scripts/net.ccxvii.spatterlight.SpatterlightThumbnailer",
+    "~/Library/Application Scripts/net.ccxvii.spatterlight.iFictionQuickLook",
+    "~/Library/Containers/net.ccxvii.spatterlight.SpatterlightQuickLook",
+    "~/Library/Containers/net.ccxvii.spatterlight.SpatterlightThumbnailer",
+    "~/Library/Containers/net.ccxvii.spatterlight.iFictionQuickLook",
+    "~/Library/Preferences/net.ccxvii.spatterlight.plist",
+  ]
 end

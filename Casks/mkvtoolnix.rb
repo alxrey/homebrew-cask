@@ -1,6 +1,6 @@
 cask "mkvtoolnix" do
-  version "58.0.0"
-  sha256 "4841562c9b1d0c1d84555da411a24555a72eb8f2d3b4f7bd9038e1256d8e8549"
+  version "62.0.0"
+  sha256 "52036072568d0836b6d308f3d1c7be93b3b4b60f91fa69a38ecdddc6b99043db"
 
   url "https://mkvtoolnix.download/macos/MKVToolNix-#{version}.dmg"
   name "MKVToolNix"
@@ -16,9 +16,9 @@ cask "mkvtoolnix" do
   conflicts_with formula: "mkvtoolnix"
   depends_on macos: ">= :catalina"
 
-  app "MKVToolNix-#{version.major_minor_patch}.app"
-  binary "#{appdir}/MKVToolNix-#{version.major_minor_patch}.app/Contents/MacOS/mkvextract"
-  binary "#{appdir}/MKVToolNix-#{version.major_minor_patch}.app/Contents/MacOS/mkvinfo"
-  binary "#{appdir}/MKVToolNix-#{version.major_minor_patch}.app/Contents/MacOS/mkvmerge"
-  binary "#{appdir}/MKVToolNix-#{version.major_minor_patch}.app/Contents/MacOS/mkvpropedit"
+  app "MKVToolNix-#{version}.app"
+  binary "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/mkvextract"
+  binary "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/mkvinfo"
+  binary "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/mkvmerge"
+  binary "#{appdir}/MKVToolNix-#{version}.app/Contents/MacOS/mkvpropedit"
 end
